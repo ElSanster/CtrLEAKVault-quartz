@@ -1,0 +1,59 @@
+name: Sync Vault y Deploy
+
+on:
+  repository_dispatch:
+    types: [vault-updated]
+  workflow_dispatch:
+
+env:
+  THEME_NAME: its-theme
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout fork de Quartz
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias de Quartz
+        run: npm ci
+
+      - name: Instalar plugins community de Quartz
+        run: npx quartz plugin install
+
+      - name: Clonar rama vault con historial git completo
+        run: |
+          git clone --branch vault --single-branch \
+            https://${{ secrets.VAULT_TOKEN }}@github.com/ElSanster/CtrLEAK-ObsidianVault.git \
+            vault-content
+
+      - name: Inyectar fechas reales desde git en el frontmatter
+        run: |
+          chmod +x inject-dates.sh
+          ./inject-dates.sh
+
+      - name: Copiar notas (ya con fechas) al content
+        run: |
+          rm -rf content/*
+          cp -r vault-content/* content/
+          rm -rf content/.git
+
+      - name: Fetch Quartz Theme
+        run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action_v1.sh | bash -s -- $THEME_NAME
+          
+      - name: Build Quartz
+        run: npx quartz build
+
+      - name: Deploy a Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=ctrleak-vault-quartz --branch=main --commit-dirty=true

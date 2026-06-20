@@ -1,3 +1,128 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+/* CMON, GIVE 'EM SOME SOUL */
+@keyframes glowPulse {
+
+    0% {
+        text-shadow: 0 0 7px currentColor;
+        filter: brightness(1);
+    }
+    25% {
+        text-shadow: 0 0 14px currentColor;
+        filter: brightness(1.43);
+    }
+    100% {
+        text-shadow: 0 0 7px currentColor;
+        filter: brightness(0.7);
+    }
+}
+
+@keyframes glowPulse3steps {
+
+    0% {
+        text-shadow: 0 0 7px currentColor;
+        filter: brightness(1);
+    }
+    25% {
+        text-shadow: 0 0 21px currentColor;
+        filter: brightness(1.52);
+    }
+    100% {
+        text-shadow: 0 0 7px currentColor;
+        filter: brightness(0.7);
+    }
+}
+
+/* BASE */
+.REBUILDED-OSTOP1:hover,
+.REBUILDED-OSTOP2:hover,
+.REBUILDED-OSTOP3:hover,
+.REBUILDED-JACK:hover,
+.REBUILDED-SOPHIE:hover,
+.REBUILDED-ALEXA:hover,
+.REBUILDED-ALEX:hover{
+    filter: brightness(1.25);
+    text-shadow: 0 0 12px currentColor;
+    animation: glowPulse 1.5s infinite ease-in-out;
+}
+
+.white{
+    filter: brightness(1.25);
+    text-shadow: 0 0 14px currentColor;
+    animation: glowPulse3steps 1.7s infinite ease-in-out;
+}
+
+.red{
+    filter: brightness(1.25);
+    text-shadow: 0 0 12px currentColor;
+    animation: glowPulse3steps 1.5s infinite ease-in-out;
+}
+
+.black{
+    filter: brightness(1.25);
+    text-shadow: 0 0 14px currentColor;
+    animation: glowPulse3steps 1.3s infinite ease-in-out;
+}
+
+
+/* HUMILDAD */
+.REBUILDED-OSTOP1 {
+    color: #B22222;
+    text-shadow: 0 0 1px #66000085;
+}
+
+/* CARIDAD */
+.REBUILDED-OSTOP2 {
+    color: #228B22;
+    text-shadow: 0 0 1px #005e0085;
+}
+
+/* DILIGENCIA */
+.REBUILDED-OSTOP3 {
+    color: #0f1d9b;
+    text-shadow: 0 0 1px #25c4bc85;
+}
+
+/* GENEROSIDAD */
+.REBUILDED-JACK {
+    color: #FFD700;
+    text-shadow: 0 0 1px #ffd700b3;
+}
+
+/* CASTIDAD */
+.REBUILDED-SOPHIE {
+    color: #ff0077;
+    text-shadow: 0 0 1px #ff77c8b3;
+}
+
+/* TEMPLANZA */
+.REBUILDED-ALEXA {
+    color: #0070ff;
+    text-shadow: 0 0 1px #6eb7ffb3;
+}
+
+/* PACIENCIA - Madre de todas las virtudes, última en desarrollarse */
+.REBUILDED-ALEX {
+    color: #ff0000;
+    text-shadow: 0 0 1px #ff3e3eb3;
+}
+
+/*1. EXPERIMENTACIÓN DE LA MUERTE */
+.white {
+    color: white;
+    text-shadow: lightgray;
+}
+
+/*2. INVITACIÓN */
+.black {
+    color: black;
+    text-shadow: #434343;
+}
+
+/*4. purga */
+.red {
+    color: darkred;
+    text-shadow: rgb(52, 0, 0);
+}
