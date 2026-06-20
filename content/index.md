@@ -60,5 +60,26 @@ Separador
 
 El veloz murciélago hindú comía feliz cardillo y kiwi[^1].
 
+## Testeo REFACTOR
+
+<span class = "white">░░░▓░░▓░░▓░░░ </span>
+<span class="red">░░░█░░█░░█░░░</span>
+<span class="black">█░░▒▒▒▓▒▒▒░░█<br>
+▓░░░░░▓░░░░░▓ <br>
+▒▒▒▒▓▓▓▓▓▒▒▒▒ <br>
+░░░░░░▓░░░░░░ <br>
+░░█▓▒▒▓▒▒▓█░░ <br>
+░░░░░▓░▓░░░░░ </span>
+<span class="red">░░░░▓░░░▓░░░░ </span>
+<span class="white">░░░░░▓▓▓░░░░░ </span>
+  4. purga
+AQUELLOS 7 DESTINADOS:****
+- <span class="REBUILDED-OSTOP1">OST OP-1  <br>orgullo-> HUMILDAD</span>
+- <span class="REBUILDED-OSTOP2">OST OP-2 <br>envidia-> CARIDAD</span>
+- <span class="REBUILDED-OSTOP3">OST OP-3 <br>pereza-> DILIGENCIA</span>
+- <span class="REBUILDED-JACK">JACK <br>avaricia-> GENEROSIDAD</span>
+- <span class="REBUILDED-SOPHIE">SOPHIE<br>lujuria-> CASTIDAD</span>
+- <span class="REBUILDED-ALEXA">ALEXA <br>gula-> TEMPLANZA </span>
+- <span class="REBUILDED-ALEX">ALEX <br>ira-> PACIENCIA</span>
 
 [^1]: La cigüeña toca el saxofón detrás del palenque de paja. 1234567890.

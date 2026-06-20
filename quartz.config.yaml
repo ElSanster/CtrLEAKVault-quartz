@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
-  pageTitleSuffix: ""
+  pageTitle: CtrLEAK Docs
+  pageTitleSuffix: " - CtrLEAK Docs"
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: es-ES
   baseUrl: ctrleak-vault-quartz.pages.dev
   ignorePatterns:
     - private
@@ -16,7 +16,7 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Lora
+      header: DM Serif Display 
       body: Source Sans Pro
       code: IBM Plex Mono
     colors:
@@ -113,7 +113,7 @@ plugins:
     options:
       useThemeFonts: true
       fontOrigin: googleFonts
-      header: Lora
+      header: DM Serif Display 
   - source: github:quartz-community/remove-draft
     enabled: true
   - source: github:quartz-community/explicit-publish
