@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: [vault-updated]
   workflow_dispatch:
+  push:
+    branches:
+      - v5
 
 env:
   THEME_NAME: its-theme
