@@ -20,10 +20,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node 22
+      - name: Setup Node 24
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Instalar dependencias de Quartz
         run: npm ci
@@ -31,13 +31,16 @@ jobs:
       - name: Instalar plugins community de Quartz
         run: npx quartz plugin install
 
-      - name: Clonar rama vault con historial git completo
-        run: |
-          git clone --branch vault --single-branch \
-            https://${{ secrets.VAULT_TOKEN }}@github.com/ElSanster/CtrLEAK-ObsidianVault.git \
-            vault-content
+      - name: Checkout del vault a vault-content
+        uses: actions/checkout@v4
+        with:
+          repository: ElSanster/CtrLEAK-ObsidianVault
+          ref: vault
+          path: vault-content
+          token: ${{ secrets.VAULT_TOKEN }}
+          fetch-depth: 0
 
-      - name: Inyectar fechas reales desde git en el frontmatter
+      - name: Inyectar fechas reales desde git en el frontmatter dentro de vault-content
         run: |
           chmod +x inject-dates.sh
           ./inject-dates.sh
