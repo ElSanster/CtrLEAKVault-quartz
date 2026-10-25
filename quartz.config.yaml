@@ -16,7 +16,7 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: DM Serif Display
+      header: Lora
       body: Source Sans Pro
       code: IBM Plex Mono
     colors:
@@ -113,7 +113,9 @@ plugins:
     options:
       useThemeFonts: true
       fontOrigin: googleFonts
-      header: DM Serif Display
+      header:
+        name: Lora
+        weights: [400, 700]
   - source: "@quartz-community/remove-draft"
     enabled: true
   - source: "@quartz-community/explicit-publish"
